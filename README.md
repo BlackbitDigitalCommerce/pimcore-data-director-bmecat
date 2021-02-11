@@ -1,6 +1,6 @@
 # BmeCat Export Add-on for Pimcore Data Director
 
-This bundle adds a result callback function template to Data Director's attribute mapping to create a BmeCat export feed. 
+This bundle adds a result callback function template to Data Director's attribute mapping to create a BMEcat export feed. 
 
 ## Installation
 To use this plugin you have to first buy and install [Pimcore Data Director](https://pimcore.com/en/developers/marketplace/blackbit_digital_commerce/pimcore-data-director_e103850).
@@ -32,6 +32,6 @@ You can always access the latest version by executing `composer update blackbit/
 
 ## Setup export
 
-Select `BmeCat Export` from the list of templates for the `Result Callback function` in data director's attribute mapping.
+Select `BMEcat Export` from the list of templates for the `Result Callback function` in data director's attribute mapping.
 
-Then the fields which the BmeCat standard defines will appear as *virtual* fields in attribute mapping. To those fields you can map your data object class fields via drag & drop (and additional callback functions if necessary). Afterwards you can access the export either via manual import or by a URL (via Data Director's REST API).
+Then the fields which the BMEcat standard defines will appear as *virtual* fields in attribute mapping. To those fields you can map your data object class fields via drag & drop (and additional callback functions if necessary). Afterwards you can access the export either via manual import or by a URL (via Data Director's REST API).
