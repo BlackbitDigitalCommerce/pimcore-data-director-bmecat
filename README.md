@@ -1,6 +1,19 @@
 # BmeCat Export Add-on for Pimcore Data Director
 
-This bundle adds a result callback function template to Data Director's attribute mapping to create a BMEcat export feed. 
+This bundle adds a result callback function template to Data Director's attribute mapping to create a BMEcat export feeds. 
+
+As it uses Data Director's export capabilities, your BMEcat export profit by:
+
+* everything is configurable in Pimcore backend user interface - no creation of PHP files or anything similar necessary
+* access any data which is connected to exported products, for example when you can easily access assigned categories, price information, manufacturers, product features images etc.
+* full flexibility in setting up a transformation pipeline to change values to the desired format (e.g. some BMEcat-processing applications have restrictions on length of some fields)
+* supported BMEcat versions: 1.2, 2005.1
+* automatically execute exports whenever a product object gets saved whose data gets exported to:
+    * prepare export once the data changes, so that the data does not have to be generated in the moment when the export is requested -> very fast exports because the export document is already available in the moment of request -> you will have an always up-to-date BMEcat export
+    * upload exports automatically to a target system to always have up-to-date data there
+    * automatically send data the other APIs
+* intelligent checks whether anything changed since the last export. If nothing changed, export document gets delivered from cache
+* access exports via URL, for example to pull BMEcat export into an external system
 
 ## Installation
 To use this plugin you have to first buy and install [Pimcore Data Director](https://pimcore.com/en/developers/marketplace/blackbit_digital_commerce/pimcore-data-director_e103850).
