@@ -1,4 +1,4 @@
-# BmeCat Export Add-on for Pimcore Data Director
+# BMEcat Export Add-on for Pimcore Data Director
 
 This bundle adds a result callback function template to Data Director's attribute mapping to create a BMEcat export feeds. 
 
