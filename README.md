@@ -24,7 +24,7 @@ When we permit your account to access our repository, please add the repository 
 "repositories": [
     {
         "type": "vcs",
-        "url": "https://bitbucket.org/blackbitwerbung/pimcore-plugins-data-director-facebook"
+        "url": "https://bitbucket.org/blackbitwerbung/pimcore-plugins-data-director-bmecat"
     }
 ],
 ```
