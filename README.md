@@ -25,7 +25,7 @@ Using classification systems like ETIM has several advantages:
 2. You simplify the process of providing your product data to resellsers and sales partners by exporting a product's category and technical data in the standardized ETIM format.
 
    For example if your sales partner buys products from multiple suppliers beside you, every manufacturer might invent its own system of categories and technical data attributes. The reseller how faces the challenge of putting all this data from the suppliers / manufacturers to its own category /
-   attribute system. For example one supplier uses a category `Clothes > Shoes` and another one uses `Clothes > Shoes > Sneakers`. Now the supplier has to map those supplier categories to its own category system. ETIM simplifies this because it has standardized classes. As soon as a reseller has
+   attribute system. For example one supplier uses a category `Clothes > Shoes > For him` and another one uses `Clothes > Men > Shoes > Sneakers`. Now the supplier has to map those supplier categories to its own category system. ETIM simplifies this because it has standardized classes. As soon as a reseller has
    mapped the ETIM classes to his own category system, he can from now automatically assign supplier products to his own categories - so this mapping effort has only to be done once compared to once *per supplier* when not using a classification standard like ETIM.
 
    The same problems arise for technical data. One supplier has t-shirt sizes `M, L, XL, 2XL` while another one has `M, L, XL, XXL` and a third one has `Medium, Large, Extra Large, Extra-Extra large`. When a reseller wants to provide a size filter on its website he has to map these different sizes to
