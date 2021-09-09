@@ -15,6 +15,46 @@ As it uses Data Director's export capabilities, your BMEcat exports profit by:
 * intelligent checks whether anything changed since the last export. If nothing changed, export document gets delivered from cache
 * access exports via URL, for example to pull BMEcat export into an external system
 
+## Importing ETIM classes / groups / features to Pimcore classification store
+
+### Advantages of classication systems like ETIM
+
+Using classification systems like ETIM has several advantages:
+
+1. You do not have to reinvent which technical attributes products of certain categories have.
+2. You simplify the process of providing your product data to resellsers and sales partners by exporting a product's category and technical data in the standardized ETIM format.
+
+   For example if your sales partner buys products from multiple suppliers beside you, every manufacturer might invent its own system of categories and technical data attributes. The reseller how faces the challenge of putting all this data from the suppliers / manufacturers to its own category /
+   attribute system. For example one supplier uses a category `Clothes > Shoes` and another one uses `Clothes > Shoes > Sneakers`. Now the supplier has to map those supplier categories to its own category system. ETIM simplifies this because it has standardized classes. As soon as a reseller has
+   mapped the ETIM classes to his own category system, he can from now automatically assign supplier products to his own categories - so this mapping effort has only to be done once compared to once *per supplier* when not using a classification standard like ETIM.
+
+The same problems arise for technical data. One supplier has t-shirt sizes `M, L, XL, 2XL` while another one has `M, L, XL, XXL` and a third one has `Medium, Large, Extra Large, Extra-Extra large`. When a reseller wants to provide a size filter on its website he has to map these different sizes to
+an own size system. But when the suppliers provide technical data as ETIM features, the whole mapping gets a lot easier because it only needs to be done once for all suppliers which support ETIM.
+
+3. You can still keep your categories and technical data in other fields than a classification store because the Data Director bundle can be used to automatically copy the values from your fields to the classification store fields as soon as a product gets saved.
+
+### ETIM import command
+
+This bundle provides a command to automatically create and update Pimcore classification stores based on the [ETIM classification system](https://viewer.etim-international.com/). This import command can be triggered with
+```shell
+bin/console classification-store-import:etim
+```
+It will automatically create classification stores based on ETIM releases, group collections based on ETIM groups, groups based on ETIM classes and key definitions / fields based on ETIM features.
+
+You can also filter the classes and fields to be created:
+```shell
+bin/console classification-store-import:etim EC004082 shoe
+```
+This will only import classes and fields which have anywhere in their names, descriptions etc. the term "EC004082" (ETIM class "shelf") or "shoe". It is better to filter by ETIM IDs because with words like "shoe" you will also import classes like "cable shoes".
+
+All matching fields get updated with the current data from the ETIM API when you rerun the command again.
+
+If you want to clear the corresponding classification stores before importing again, you can use the `--rm` flag:
+```shell
+bin/console classification-store-import:etim EC004082
+```
+This will search for the class "EC004082", truncate matching classification stores for all found ETIM releases and afterwards import the class and its fields.
+
 ## Installation
 To use this plugin you have to first buy and install [Pimcore Data Director](https://pimcore.com/en/developers/marketplace/blackbit_digital_commerce/pimcore-data-director_e103850).
 
