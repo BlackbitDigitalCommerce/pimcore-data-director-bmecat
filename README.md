@@ -5,7 +5,7 @@ This bundle adds a result callback function template to Data Director's attribut
 As it uses Data Director's export capabilities, your BMEcat exports profit by:
 
 * everything is configurable in Pimcore backend user interface - no creation of PHP files or anything similar necessary
-* access any data which is connected to exported products, for example when you can easily access assigned categories, price information, manufacturers, product features images etc.
+* access any data which is connected to exported products, for example you can easily access assigned categories, price information, manufacturers, product features, images etc.
 * full flexibility in setting up a transformation pipeline to change values to the desired format (e.g. some BMEcat-processing applications have restrictions on length of some fields)
 * supported BMEcat versions: 1.2, 2005.1
 * automatically execute exports whenever a product object gets saved whose data gets exported to:
