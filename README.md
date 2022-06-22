@@ -87,4 +87,4 @@ You can always access the latest version by executing `composer update blackbit/
 
 Select `BMEcat Export` from the list of templates for the `Result Callback function` in data director's attribute mapping.
 
-Then the fields which the BMEcat standard defines will appear as *virtual* fields in attribute mapping. To those fields you can map your data object class fields via drag & drop (and additional callback functions if necessary). Afterwards you can access the export either via manual export or via URL (via Data Director's REST API).
+Then the fields defined by the BMEcat standard will appear as *virtual* fields in attribute mapping. To those fields you can map your data object class fields via drag & drop (and additional callback functions if necessary). Afterwards you can access the export either via manual export or via URL (via Data Director's REST API).
