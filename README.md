@@ -13,11 +13,11 @@ As it uses Data Director's export capabilities, your BMEcat exports profit by:
     * upload exports automatically to a target system to always have up-to-date data there
     * automatically send data the other APIs
 * intelligent checks whether anything changed since the last export. If nothing changed, export document gets delivered from cache
-* access exports via URL, for example to pull BMEcat export into an external system
+* access exports via URL, for example to pull BMEcat export into an external system instead of pushing it
 
 ## Importing ETIM classes / groups / features to Pimcore classification store
 
-### Advantages of classication systems like ETIM
+### Advantages of classification systems like ETIM
 
 Using classification systems like ETIM has several advantages:
 
@@ -55,6 +55,20 @@ bin/console classification-store-import:etim EC004082
 ```
 This will search for the class "EC004082", truncate matching classification stores for all found ETIM releases and afterwards import the class and its fields.
 
+---
+
+After executing the `classification-store-import:etim` you will have a classification store with all the available fields, correct field types, available options, quantity value units (incl. conversion factors) and translations:
+
+![ETIM classification store group collections](img/etim-classification-store-group-collections.png)
+
+![ETIM classification store groups](img/etim-classification-store-groups.png)
+
+![ETIM classification store fields](img/etim-classification-store-fields.png)
+
+And in object editing you can enter the data:
+
+![ETIM classification store object editing](img/etim-classification-store-object-editing.png)
+
 ## Installation
 To use this plugin you have to first buy and install [Pimcore Data Director](https://pimcore.com/en/developers/marketplace/blackbit_digital_commerce/pimcore-data-director_e103850).
 
@@ -87,4 +101,4 @@ You can always access the latest version by executing `composer update blackbit/
 
 Select `BMEcat Export` from the list of templates for the `Result Callback function` in data director's attribute mapping.
 
-Then the fields defined by the BMEcat standard will appear as *virtual* fields in attribute mapping. To those fields you can map your data object class fields via drag & drop (and additional callback functions if necessary). Afterwards you can access the export either via manual export or via URL (via Data Director's REST API).
+Then the fields which the BMEcat standard defines will appear as *virtual* fields in attribute mapping. To those fields you can map your data object class fields via drag & drop (and additional callback functions if necessary). Afterwards you can access the export either via manual export or via URL (via Data Director's REST API).
