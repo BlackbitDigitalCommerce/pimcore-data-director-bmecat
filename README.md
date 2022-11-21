@@ -33,7 +33,7 @@ an own size system. But when the suppliers provide technical data as ETIM featur
 
 3. You can still keep your categories and technical data in other fields than a classification store because the Data Director bundle can be used to automatically copy the values from your fields to the classification store fields as soon as a product gets saved.
 
-### ETIM import command
+### Create ETIM classifiation store
 
 This bundle provides a command to automatically create and update Pimcore classification stores based on the [ETIM classification system](https://viewer.etim-international.com/). This import command can be triggered with
 ```shell
