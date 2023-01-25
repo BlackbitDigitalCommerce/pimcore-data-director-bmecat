@@ -70,7 +70,11 @@ And in object editing you can enter the data:
 ![ETIM classification store object editing](img/etim-classification-store-object-editing.png)
 
 ## Installation
-To use this plugin you have to first buy and install [Pimcore Data Director](https://pimcore.com/en/developers/marketplace/blackbit_digital_commerce/pimcore-data-director_e103850).
+
+This bundle is an add-on bundle for [Pimcore Data Director](https://pimcore.com/en/developers/marketplace/blackbit_digital_commerce/pimcore-data-director_e103850). You can buy this BMEcat add-on bundle in the [Blackbit Shop](https://shop.blackbit.com/pimcore-bmecat-import-export/) or write an email
+to [info@blackbit.de](mailto:info@blackbit.de).
+
+After you have installed Pimcore Data Director you can proceed with the BMEcat bundle installation.
 
 Please contact us to get access to the bundle's [Bitbucket repository](https://bitbucket.org/blackbitwerbung/pimcore-plugins-data-director-bmecat) or you get the plugin code as a zip file. 
 When we permit your account to access our repository, please add the repository to the `composer.json` in your Pimcore root folder (see [Composer manual about repositories](https://getcomposer.org/doc/05-repositories.md#vcs)):
