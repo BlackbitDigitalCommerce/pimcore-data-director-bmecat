@@ -1,6 +1,6 @@
 # BMEcat Export Add-on for Pimcore Data Director
 
-This bundle adds a result callback function template to Data Director's attribute mapping to create BMEcat export feeds. 
+This bundle adds result callback function templates to Data Director's attribute mapping to create BMEcat export feeds. 
 
 As it uses Data Director's export capabilities, your BMEcat exports profit by:
 
@@ -32,6 +32,78 @@ Using classification systems like ETIM has several advantages:
 an own size system. But when the suppliers provide technical data as ETIM features, the whole mapping gets a lot easier because it only needs to be done once for all suppliers which support ETIM.
 
 3. You can still keep your categories and technical data in other fields than a classification store because the Data Director bundle can be used to automatically copy the values from your fields to the classification store fields as soon as a product gets saved.
+
+### Import ETIM groups and attributes
+
+By calling http://your-pimcore.org/classification/etim.xml you can access all ETIM groups as an XML file. Internally the underlying code accesses the ETIM API and converts it to an XML feed: 
+
+```xml
+<?xml version="1.0"?>
+<etim release="ETIM-8.0">
+    <group id="EC000001">
+        <category id="EG000017">
+            <name language="de">Niederspannungsschaltger&#xE4;te</name>
+            <name language="en">Low-voltage industrial components</name>
+            ...
+        </category>
+        <name language="de">Sammelschienenklemme</name>
+        <name language="en">Busbar terminal</name>
+        ...
+        <synonyms>
+            <synonym language="de">Abzweigklemme</synonym>
+            <synonym language="de">Anschlussklemme</synonym>
+            <synonym language="en">Busbar terminal</synonym>
+            <synonym language="en">Cable clamp</synonym>
+            ...
+        </synonyms>
+        <attributes>
+            <attribute id="EF007220">
+                <name language="de">Sammelschienendicke</name>
+                <name language="en">Busbar thickness</name>
+                <allowed_values>
+                    <value id="EU570448" abbreviation="mm">
+                        <name language="de">Millimeter</name>
+                        <name language="en">Millimetre</name>
+                        ...
+                    </value>
+                    <value id="EU000051" abbreviation="inch">
+                        <name language="de">Inch</name>
+                        <name language="en">Inch</name>
+                        ...
+                    </value>
+                </allowed_values>
+            </attribute>
+            <attribute id="EF000073">
+                <name language="de">Geeignet f&#xFC;r</name>
+                <name language="en">Suitable for</name>
+                ...
+                <allowed_values>
+                    <value id="EV009241">
+                        <name language="de">Flachschiene</name>
+                        <name language="en">Flat rail</name>
+                        ...
+                    </value>
+                    <value id="EV009472">
+                        <name language="de">T-Schiene</name>
+                        <name language="en">T-rail</name>
+                        ...
+                    </value>
+                    ...
+                </allowed_values>
+            </attribute>
+            ...
+        </attributes>
+    </group>
+    ...
+</etim>
+```
+
+This can be used for creating ETIM groups and features and Pimcore data objects via Data Director.
+
+This URL supports parameters:
+
+- `release`, e.g. http://your-pimcore.org/classification/etim.xml?release=ETIM-9.0 to retrieve all ETIM 9.0 data. By default ETIM-8.0 data gets loaded.
+- `filters`: e.g. http://your-pimcore.org/classification/etim.xml?filters[]=EC004082 to retrieve only data for a certain group. It is a fulltext filter, so you will get a certain group even if the filter term only matches for a certain attribute.
 
 ### Create ETIM classifiation store
 
