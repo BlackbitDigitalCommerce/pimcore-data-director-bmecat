@@ -1,4 +1,4 @@
-# BMEcat Export Add-on for Pimcore Data Director
+# BMEcat Export & Marketplace Add-on for Pimcore Data Director
 
 This bundle adds result callback function templates to Data Director's attribute mapping to create BMEcat export feeds. 
 
@@ -140,6 +140,10 @@ After executing the `classification-store-import:etim` you will have a classific
 And in object editing you can enter the data:
 
 ![ETIM classification store object editing](img/etim-classification-store-object-editing.png)
+
+### Import Ebay categories
+
+Via http://your-pimcore.org/classification/ebay.xml the Ebay categories get fetched from the Ebay taxonomy API and provided as XML. This can be used to import Ebay categories as data objects into Pimcore.
 
 ## Installation
 
