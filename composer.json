@@ -1,7 +1,7 @@
 {
   "name": "blackbit_digital_commerce/pimcore-data-director-bmecat",
   "description": "Create BMEcat export from Pimcore data objects",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "homepage": "https://pimcore.blackbit.de/pimcore-import-plugin",
   "license": "GPL-3.0-or-later",
   "type": "pimcore-bundle",
