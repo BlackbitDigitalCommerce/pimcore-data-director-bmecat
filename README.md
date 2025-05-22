@@ -15,6 +15,8 @@ As it uses Data Director's export capabilities, your BMEcat exports profit by:
 * intelligent checks whether anything changed since the last export. If nothing changed, export document gets delivered from cache
 * access exports via URL, for example to pull BMEcat export into an external system instead of pushing it
 
+![BMEcat field mapping](img/bmecat-field-mapping.png)
+
 ## Importing ETIM classes / groups / features to Pimcore classification store
 
 ### Advantages of classification systems like ETIM
